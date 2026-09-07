@@ -1,7 +1,7 @@
 Module module() {
   return module(
     name: "orm.hibernate",
-    version: 2,
+    version: 3,
     exports: ["Builder", "Provider", "Session", "Transaction"],
     dependencies: [dependency(repository: "github", name: "orm", version: 2)],
     binding: jarBinding(
