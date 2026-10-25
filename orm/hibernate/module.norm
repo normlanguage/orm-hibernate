@@ -1,9 +1,9 @@
 Module module() {
   return module(
     name: "orm.hibernate",
-    version: 4,
+    version: 5,
     exports: ["Builder", "Provider", "Session", "Transaction"],
-    dependencies: [dependency(repository: "github", name: "orm", version: 3)],
+    dependencies: [dependency(repository: "github", name: "orm", version: 4)],
     binding: jarBinding(
       target: mavenJar(
         group: "org.hibernate.orm",
@@ -12,8 +12,7 @@ Module module() {
       ),
       api: [
         jarType(
-          name: "org.hibernate.cfg.Configuration",
-          members: [],
+          name: "org.hibernate.cfg.Configuration", alias: "Builder", members: [],
           overloads: [
             jarOverload(name: "new", parameterTypes: []),
             jarOverload(name: "addAnnotatedClass", parameterTypes: ["java.lang.Class"]),
@@ -22,8 +21,7 @@ Module module() {
           ]
         ),
         jarType(
-          name: "org.hibernate.SessionFactory",
-          members: [],
+          name: "org.hibernate.SessionFactory", alias: "Provider", members: [],
           overloads: [
             jarOverload(name: "close", parameterTypes: []),
             jarOverload(name: "isOpen", parameterTypes: []),
@@ -31,8 +29,7 @@ Module module() {
           ]
         ),
         jarType(
-          name: "org.hibernate.Session",
-          members: [],
+          name: "org.hibernate.Session", alias: "Session", members: [],
           overloads: [
             jarOverload(name: "beginTransaction", parameterTypes: []),
             jarOverload(name: "close", parameterTypes: []),
@@ -43,8 +40,7 @@ Module module() {
           ]
         ),
         jarType(
-          name: "org.hibernate.Transaction",
-          members: [],
+          name: "org.hibernate.Transaction", alias: "Transaction", members: [],
           overloads: [
             jarOverload(name: "commit", parameterTypes: []),
             jarOverload(name: "isActive", parameterTypes: []),
