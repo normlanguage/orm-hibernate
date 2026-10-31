@@ -1,9 +1,9 @@
 Module module() {
   return module(
     name: "orm.hibernate",
-    version: 7,
+    version: 8,
     exports: ["Builder", "Provider", "Session", "Transaction"],
-    dependencies: [dependency(repository: "github", name: "orm", version: 6)],
+    dependencies: [dependency(repository: "github", name: "orm", version: 7)],
     binding: jarBinding(
       target: mavenJar(
         group: "org.hibernate.orm",

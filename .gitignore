@@ -3,3 +3,4 @@ build/
 *.nar
 *.pom
 *.sha256
+/orm/hibernate/resources/META-INF/licenses/orm.hibernate/LICENSE
